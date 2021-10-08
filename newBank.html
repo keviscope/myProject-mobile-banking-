@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <title>Banking</title>
+        <link rel="stylesheet" href="style.css">
+       
+    </head>
+    <body>
+
+
+        <!--Inner App-->
+        
+        <div class="innerApp"> 
+           
+        <div class="upload-image-css">
+            <section>
+                <p><img id="output" src="1.jpeg" class="image-style" width="200" height="200" /></p>
+                <p><input type="file" accept="image/*" id="file" onchange="loadFile(event)" style="display: none;"></p> <!-- accept="image" is only to accept image file-->
+                <p class="upload-btn-css"><label for="file" class="cursor-pointer-css">Upload Image</label></p>
+            </section>
+        </div>
+
+        <div class="bankPage-css">
+           <div class="div-text">
+            --ZAMOMO--<br>
+               
+            </div>
+        </div>
+        <div class="balance-css" id="balanceChecking" style="display: none;">
+            <p>Balance : &#8377;&nbsp;<input type="text" value="Try again later" id="updateBalance" class="show-balance-css"></p>
+        </div>
+           
+        <div class="banking-css">
+            <div>
+                <form action="">
+                    
+                    <div class="withdraw-css">
+                        <label class="WithdrawDeposit">What's Your Plan Today: </label><br>
+                        <select id="selectBanking" onclick="showHideDiv1()">
+                            <option value="select" id="Select">--Select--</option>
+                            <option value="Recharge" id="Recharge">Recharge</option>
+                            <option id="Transfer" value="Transfer">Transfer</option>
+                            <option id="Balance" value="Balance">Balance</option>
+
+                        </select>
+         
+         
+             </div><br><br>
+          
+                <!--Enter TRANSFER-->
+                <div class="transfer" style="display: none;">
+
+                    <label class="WithdrawDeposit">SELECT RECIPIENT BANK : </label>
+                    <select id="selectBanks">
+                        <option value="First Bank" id="Recharge">FIRST BANK</option>
+                        <option id="withdraw" value="GTB">GTB</option>
+                        <option id="withdraw" value="ZENITH">ZENITH</option>
+                        <option id="withdraw" value="ECO">ECO</option>
+                        <option id="withdraw" value="ACCESS">ACCESS</option>
+                    </select><br><br>
+                <div class="amount-text-css">
+                    <label class="EnterAmount">Enter Amount :</label>
+                    <input type="number" placeholder="Enter Amount" id="EnterAmount">
+                </div><br>
+                <div class="description-text-css">
+                    <label for="Description">ACCOUNT NUMBER :</label>
+                    <input type="text" placeholder="Enter Account Number" id="EnterAccountNumber">
+                </div>
+ 
+           
+         
+            </div>
+          
+<!--Enter RECHARGE-->
+<div class="recharge" style="display: none;">
+    <div>
+             <div class="withdraw-css">
+                <label class="WithdrawDeposit">Select Network Provider: </label>
+                <select id="selectNetworkProvider">
+                    <option value="MTN" id="Recharge">MTN</option>
+                    <option id="withdraw" value="AIRTEL">AIRTEL</option>
+                    <option id="withdraw" value="9MOBILE">9MOBILE</option>
+                    <option id="withdraw" value="GLO">GLO</option>
+                </select>
+            </div>
+        <br>
+        <div class="amount-text-css">
+            <label class="EnterAmount">Enter Amount :</label>
+            <input type="number" placeholder="Enter Amount" id="EnterAmount2">
+        </div>
+        <br>
+        <div class="description-text-css">
+            <label for="Description">Phone Number :</label>
+            <input type="text" placeholder="Enter Phone Number" id="EnterPhoneNo">
+        </div>
+    <br>
+    </div>
+</div>
+
+
+
+
+<div class="submitReset"> 
+                <div class="submit-css">
+                    <input type="button" class="sub-btn" onclick="updateTransaction()" value="Submit">
+                </div>
+                <div class="reset-css">
+                    <input type="reset" class="res-btn">
+                </div>
+                </div>
+                </form>
+            </div>
+        </div>
+<br>
+<span id="rechargeHistory" class="rechargeCSS" onclick="rechargeHistoryActivated()">Check Recharge History</span>
+<span id="TransferHistory" class="transfercss" onclick="trasferHistoryActivated()">Check Transfer History</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <hr id="hr1">
+        
+        <!-- Progress bar -->
+        <div id="chartContainer" class="pie-chart-css"></div>
+
+        <!-- Recharge History -->
+        <!-- 
+                  <div  class="OpenRechargeHistory" style="display: none;">
+        <p class="WDH">Recharge History</p>
+        
+        <div class="withdraw-history-css">
+            
+            <div class="withdraw-amount-css">
+                Amount 
+            <p id="showAmount" class="show-WDamount-css"></p>
+            
+            <div class="verticalLine1"></div>
+            <div class="withdraw-description-css">    
+                Phone Number
+                <p id="showDescription" class="show-WDdescription-css"></p>
+            </div><br><br>
+            <div class="verticalLine"></div>
+            <div class="withdraw-description-css">    
+                Network Provider
+                <p id="showNetworkProvider" class="show-WDdescription-css"></p>
+            </div>
+        </div>
+        </div>
+    -->
+
+
+
+        <!-- Recharge History -->
+        <!-- 
+                  <div  class="OpenRechargeHistory" style="display: none;">
+        <p class="WDH">Recharge History</p>
+        
+        <div class="withdraw-history-css">
+            
+            <div class="withdraw-amount-css">
+                Amount 
+            <p id="showAmount" class="show-WDamount-css"></p>
+            
+            <div class="verticalLine1"></div>
+            <div class="withdraw-description-css">    
+                Phone Number
+                <p id="showDescription" class="show-WDdescription-css"></p>
+            </div><br><br>
+            <div class="verticalLine"></div>
+            <div class="withdraw-description-css">    
+                Network Provider
+                <p id="showNetworkProvider" class="show-WDdescription-css"></p>
+            </div>
+        </div>
+        </div>
+
+    -->
+
+     
+                  <div  class="OpenRechargeHistory" style="display: none;">
+                    <table> 
+                        Recharge History
+        <tr>
+           <th> Amount  </th>  
+           <th>  Phone Number  </th>  
+           <th>   Network Provider  </th>  
+        </tr>
+            
+        <tr> 
+            <td id="showAmount" class="show-WDamount-css"></td>
+            <td id="showDescription" class="show-WDdescription-css"></td>
+            <td id="showNetworkProvider" class="show-WDdescription-css"></td>
+        </tr>
+             
+           
+        </table>
+        </div>
+
+        <div class="OpenTrasferHistory" style="display: none;">
+           <table> Transfer History
+
+            <tr>
+                <th>Amount</th>
+                <th>Account Number</th>
+                <th>Bank Name</th>
+            </tr>
+             
+            <tr> 
+                    <td id="showAmount1" class="show-DepoAmount-css"></td>
+               
+                    <td id="showAccountNumber" class="show-DepoDescription-css"></td>
+            
+                    <td id="showBank" class="show-DepoDescription-css"></td>
+                </tr>  
+           
+        </table>
+        </div>
+
+
+
+
+
+
+
+<!-- 
+        <div class="OpenTrasferHistory" style="display: none;">
+        <p class="DH">Transfer History</p>
+        <div class="deposit-history-css">    
+            <div class="deposit-amount-css">
+                Amount 
+                <p id="showAmount1" class="show-DepoAmount-css"></p>
+            </div>
+            <div class="verticalLine2"></div>
+            <div class="deposit-description-css">    
+                Account Number
+                <p id="showAccountNumber" class="show-DepoDescription-css"></p>
+            </div>
+            <div class="verticalLine2"></div>
+            <div class="deposit-description-css">    
+                Bank Name
+                <p id="showBank" class="show-DepoDescription-css"></p>
+            </div>
+        </div>
+    </div>-->
+
+        
+    
+
+   
+
+
+
+
+
+
+    
+    <button onclick="printDiv()" class="pdf-btn">Download as PDF</button><br>
+    <br>
+    <button onclick="logOut()" class="logOut">Log Out</button>
+    </div>
+        <script src="banking.js"></script>
+       <!--  <script src="canvas.js"></script>
+        <script src='pieChart.js'></script>-->
+   
+    </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <title>Banking</title>
+        <link rel="stylesheet" href="style.css">
+       
+    </head>
+    <body>
+
+<!--Html logging-->
+
+<div class="outerApp"> 
+<div id="myForm">
+    <h3>--ZAMOMO BANKING APP--</h3>
+    <h2>LOGIN PAGE</h2>
+    <label>USERNAME</label><br>
+    <input type="text" name="name" value="" placeholder="Enter UserName" id="username">
+    <br><br>
+
+    <label>5 DIGIT PIN</label><br>
+    <input type="text" name="password" value="" maxlength="5" onkeypress="return isNumberKey(event, this.id)" placeholder="Enter 5 Digit PIN" id="password">
+    <br><br>
+    
+    <span class="btnOuter" id="btn"><b>Log In</b></span>
+    <br>
+    <br>
+    <i>  <span class="logging"></span></i>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+        
+        <script src="banking.js"></script>
+       <!--  <script src="canvas.js"></script>
+        <script src='pieChart.js'></script>-->
+   
+    </body>
+</html>
